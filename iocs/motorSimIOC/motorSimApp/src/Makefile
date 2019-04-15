@@ -23,10 +23,10 @@ motorSim_DBD += base.dbd
 motorSim_DBD += asyn.dbd
 #endif
 motorSim_DBD += motorSupport.dbd
-motorSim_DBD += devMotorSim.dbd
+motorSim_DBD += motorSimSupport.dbd
 
 # Add all the support libraries needed by this IOC
-motorSim_LIBS += motorSim
+motorSim_LIBS += motorSimSupport
 motorSim_LIBS += motor
 #ifdef ASYN
 motorSim_LIBS += asyn
