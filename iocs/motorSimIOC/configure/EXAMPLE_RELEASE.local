@@ -1,0 +1,6 @@
+# Use the following lines if motorMotorSim was built inside motor
+MOTOR=
+-include $(MOTOR)/configure/RELEASE
+# Use the following lines if motorMotorSim was built outside motor
+#!MOTOR_MOTORSIM=
+#!-include $(MOTOR_MOTORSIM)/configure/RELEASE.local
