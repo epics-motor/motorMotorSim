@@ -59,6 +59,7 @@ motorSimAxis::motorSimAxis(motorSimController *pController, int axis, double low
   pars.Tcoast = 0.0;
   pars.axis[0].Amax = 1.0;
   pars.axis[0].Vmax = 1.0;
+  homed_ = 0;
 
   endpoint_.T = 0;
   endpoint_.axis[0].p = start;
@@ -333,6 +334,7 @@ asynStatus motorSimAxis::home(double minVelocity, double maxVelocity, double acc
 
   status = setVelocity((forwards? maxVelocity: -maxVelocity), acceleration );
   homing_ = 1;
+  homed_ = 0;
   return status;
 }
 
@@ -367,6 +369,7 @@ asynStatus motorSimAxis::config(int hiHardLimit, int lowHardLimit, int home, int
   lowHardLimit_ = lowHardLimit;
   home_ = home;
   enc_offset_ = start;
+  homed_ = 0;
   return asynSuccess;
 }
 
@@ -406,6 +409,7 @@ void motorSimAxis::process(double delta )
   {
     /* Homing and have crossed the home sensor - return to home */
     homing_ = 0;
+    homed_ = 1;
     reroute_ = ROUTE_NEW_ROUTE;
     endpoint_.axis[0].p = home_;
     endpoint_.axis[0].v = 0.0;
@@ -467,6 +471,7 @@ void motorSimAxis::process(double delta )
   setIntegerParam(pC_->motorStatusDone_,       done);
   setIntegerParam(pC_->motorStatusHighLimit_,  (nextpoint_.axis[0].p >= hiHardLimit_));
   setIntegerParam(pC_->motorStatusHome_,       (nextpoint_.axis[0].p == home_));
+  setIntegerParam(pC_->motorStatusHomed_,      (homed_ == 1));
   setIntegerParam(pC_->motorStatusMoving_,     !done);
   setIntegerParam(pC_->motorStatusLowLimit_,   (nextpoint_.axis[0].p <= lowHardLimit_));
   callParamCallbacks();
