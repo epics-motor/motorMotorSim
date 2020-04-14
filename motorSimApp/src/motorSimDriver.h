@@ -47,6 +47,7 @@ private:
   double hiHardLimit_;
   double enc_offset_;
   double home_;
+  int homed_;
   int homing_;
   epicsTimeStamp tLast_;
   double deferred_position_;
