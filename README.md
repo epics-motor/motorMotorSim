@@ -1,7 +1,8 @@
 # motorMotorSim
 EPICS motor support for simulated motors
 
-[![Build Status](https://travis-ci.org/epics-motor/motorMotorSim.png)](https://travis-ci.org/epics-motor/motorMotorSim)
+[![Build Status](https://github.com/epics-motor/motorMotorSim/actions/workflows/ci-scripts-build.yml/badge.svg)](https://github.com/epics-motor/motorMotorSim/actions/workflows/ci-scripts-build.yml)
+<!--[![Build Status](https://travis-ci.org/epics-motor/motorMotorSim.png)](https://travis-ci.org/epics-motor/motorMotorSim)-->
 
 motorMotorSim is a submodule of [motor](https://github.com/epics-modules/motor).  When motorMotorSim is built in the ``motor/modules`` directory, no manual configuration is needed.
 
