@@ -19,11 +19,12 @@ cd startup
 dbLoadDatabase("$(TOP)/dbd/motorSim.dbd")
 WithAsynVx_registerRecordDeviceDriver(pdbbase)
 
-dbLoadTemplate("motor.substitutions")
-
-# Create simulated motors: ( start card , start axis , low limit, high limit, home posn, # cards, # axes to setup)
-motorSimCreate( 0, 0, -32000, 32000, 0, 1, 4 )
-# Setup the Asyn layer (portname, low-level driver drvet name, card, number of axes on card)
-drvAsynMotorConfigure("motorSim1", "motorSim", 0, 4)
+< motorSim.cmd
 
 iocInit
+
+## motorUtil (allstop & alldone)
+motorUtilInit("IOC:")
+
+# Boot complete
+date
