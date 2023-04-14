@@ -1,0 +1,2 @@
+# Load 8 simulated motors with default settings
+iocshLoad("$(MOTOR_MOTORSIM)/iocsh/motorSim8x.iocsh", "PREFIX=IOC:,INSTANCE=motorSim,SUB=$(MOTOR_MOTORSIM)/iocsh/EXAMPLE_motorSim8x.substitutions")

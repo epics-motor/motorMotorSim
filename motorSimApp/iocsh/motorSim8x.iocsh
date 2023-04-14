@@ -1,0 +1,43 @@
+# ### motorSim8x.iocsh ###
+
+#- ###################################################
+#- PREFIX           - IOC Prefix
+#- INSTANCE         - Instance name, used to create the asyn port name
+#-
+#- SUB              - Optional: Subsitutions file (asyn_motor.db), Macros P, DTYP, PORT, 
+#-                              DHLM, DLLM, and INIT will be predefined.
+#-                    Default: $(MOTOR)/iocsh/EXAMPLE_motorSim8x.substitutions
+#-
+#- LOW_LIM          - Optional: Low Limit (in steps)
+#-                    Default: -32000
+#-
+#- HIGH_LIM         - Optional: High Limit (in steps)
+#-                    Default: 32000
+#- 
+#- DLLM             - Optional: Motor Record Low Limit (in EGU)
+#-                    Default: -320.0
+#-
+#- DHLM             - Optional: Motor Record High Limit (in EGU)
+#-                    Default: 320.0
+#-
+#- HOME_POS         - Optional: Home position
+#-                    Default: 0
+#- ###################################################
+
+# Create simulated motors: (port name, number of axes on card)
+motorSimCreateController("$(INSTANCE)", 8)
+
+#asynSetTraceIOMask("$(INSTANCE)", 0, HEX)
+#asynSetTraceMask("$(INSTANCE)", 0, ERROR|FLOW|DRIVER)
+
+# motorSimConfigAxis(port, axis, highLimit, lowLimit, home, start)
+motorSimConfigAxis("$(INSTANCE)", 0, $(HIGH_LIM=32000), $(LOW_LIM=-32000), $(HOME_POS=0), 0)
+motorSimConfigAxis("$(INSTANCE)", 1, $(HIGH_LIM=32000), $(LOW_LIM=-32000), $(HOME_POS=0), 0)
+motorSimConfigAxis("$(INSTANCE)", 2, $(HIGH_LIM=32000), $(LOW_LIM=-32000), $(HOME_POS=0), 0)
+motorSimConfigAxis("$(INSTANCE)", 3, $(HIGH_LIM=32000), $(LOW_LIM=-32000), $(HOME_POS=0), 0)
+motorSimConfigAxis("$(INSTANCE)", 4, $(HIGH_LIM=32000), $(LOW_LIM=-32000), $(HOME_POS=0), 0)
+motorSimConfigAxis("$(INSTANCE)", 5, $(HIGH_LIM=32000), $(LOW_LIM=-32000), $(HOME_POS=0), 0)
+motorSimConfigAxis("$(INSTANCE)", 6, $(HIGH_LIM=32000), $(LOW_LIM=-32000), $(HOME_POS=0), 0)
+motorSimConfigAxis("$(INSTANCE)", 7, $(HIGH_LIM=32000), $(LOW_LIM=-32000), $(HOME_POS=0), 0)
+
+dbLoadTemplate("$(SUB=$(MOTOR)/iocsh/EXAMPLE_motorSim8x.substitutions)", "P=$(PREFIX),DTYP='asynMotor',PORT=$(INSTANCE),DHLM=$(DHLM=320.0),DLLM=$(DLLM=-320.0)")
