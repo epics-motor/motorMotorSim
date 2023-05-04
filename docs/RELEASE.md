@@ -1,5 +1,24 @@
 # motorMotorSim Releases
 
+## __R1-2 (2023-05-04)__
+R1-2 is a release based on the master branch.
+
+### Changes since R1-1
+
+#### New features
+* Pull request [#9](https://github.com/epics-motor/motorMotorSim/pull/9): Added motorSim8x.iocsh, an 8-axis model-3 driver config that can be used when customization of individual axes isn't needed.
+
+#### Modifications to existing features
+* Pull request [#8](https://github.com/epics-motor/motorMotorSim/pull/8): [Mark Rivers](https://github.com/MarkRivers) updated the example IOC so it loads the model-3 driver, not the obsolete model-2 driver.
+* Pull request [#9](https://github.com/epics-motor/motorMotorSim/pull/9): Made the example IOC configurations easier to copy to other IOCs.
+
+#### Bug fixes
+* None
+
+#### Continuous integration
+* Added ci-scripts (v3.0.1)
+* Switched from Travis CI to Github Actions
+
 ## __R1-1 (2020-05-12)__
 R1-1 is a release based on the master branch.  
 
