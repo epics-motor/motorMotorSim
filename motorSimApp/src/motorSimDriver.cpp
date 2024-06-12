@@ -524,7 +524,7 @@ static void motorSimCreateContollerCallFunc(const iocshArgBuf *args)
   motorSimCreateController(args[0].sval, args[1].ival, args[2].ival, args[3].ival);
 }
 
-static const iocshArg motorSimConfigAxisArg0 = { "Post name",     iocshArgString};
+static const iocshArg motorSimConfigAxisArg0 = { "Port name",     iocshArgString};
 static const iocshArg motorSimConfigAxisArg1 = { "Axis #",        iocshArgInt};
 static const iocshArg motorSimConfigAxisArg2 = { "High limit",    iocshArgInt};
 static const iocshArg motorSimConfigAxisArg3 = { "Low limit",     iocshArgInt};
