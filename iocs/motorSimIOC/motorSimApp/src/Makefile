@@ -24,7 +24,7 @@ motorSim_DBD += asyn.dbd
 #endif
 
 #ifdef AUTOSAVE
-motorSim_DBD += autosave.dbd
+motorSim_DBD += asSupport.dbd
 #endif
 #ifdef DEVIOCSTATS
 motorSim_DBD += devIocStats.dbd
