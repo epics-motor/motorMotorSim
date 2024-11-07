@@ -22,18 +22,35 @@ motorSim_DBD += base.dbd
 #ifdef ASYN
 motorSim_DBD += asyn.dbd
 #endif
+
+#ifdef AUTOSAVE
+motorSim_DBD += asSupport.dbd
+#endif
+#ifdef DEVIOCSTATS
+motorSim_DBD += devIocStats.dbd
+#endif
+
 motorSim_DBD += motorSupport.dbd
 motorSim_DBD += motorSimSupport.dbd
 
 # Add all the support libraries needed by this IOC
 motorSim_LIBS += motorSimSupport
 motorSim_LIBS += motor
+
 #ifdef ASYN
 motorSim_LIBS += asyn
 #endif
 #ifdef SNCSEQ
 motorSim_LIBS += seq pv
 #endif
+#ifdef AUTOSAVE
+motorSim_LIBS += autosave
+#endif
+#ifdef DEVIOCSTATS
+motorSim_LIBS += devIocStats
+#endif
+
+
 
 # motorSim_registerRecordDeviceDriver.cpp derives from motorSim.dbd
 motorSim_SRCS += motorSim_registerRecordDeviceDriver.cpp
