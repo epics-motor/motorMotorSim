@@ -68,6 +68,7 @@ motorSimAxis::motorSimAxis(motorSimController *pController, int axis, double low
   nextpoint_.axis[0].p = start;
   route_ = routeNew( &(this->endpoint_), &pars );
   deferred_move_ = 0;
+  delayedDone_ = 0;
 }
 
 
