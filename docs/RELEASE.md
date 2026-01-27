@@ -1,5 +1,24 @@
 # motorMotorSim Releases
 
+## __R1-3 (2026-01-27)__
+R1-3 is a release based on the master branch.
+
+### Changes since R1-2
+
+#### New features
+* Pull request [#11](https://github.com/epics-motor/motorMotorSim/pull/11) and [#15](https://github.com/epics-motor/motorMotorSim/pull/15): [Jakub Wlodek](https://github.com/jwlodek) added autosave and iocStats to the example IOC, if present in the RELEASE file
+
+#### Modifications to existing features
+* None
+
+#### Bug fixes
+* Pull request [#15](https://github.com/epics-motor/motorMotorSim/pull/15): [Stephen Dann](https://github.com/stephen-jd-dann) fixed an uninitialized variable bug that caused the first axis to get stuck in the moving state.
+* Pull request [#10](https://github.com/epics-motor/motorMotorSim/pull/10): [Jakub Wlodek](https://github.com/jwlodek) fixed a typo in the motorSimConfigAxis help output.
+* Pull request [#13](https://github.com/epics-motor/motorMotorSim/pull/13): [J. Lewis Muir](https://github.com/jlmuir) fixed typos in README.md.
+
+#### Continuous integration
+* Upgraded ci-scripts (v3.4.1)
+
 ## __R1-2 (2023-05-04)__
 R1-2 is a release based on the master branch.
 
