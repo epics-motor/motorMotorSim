@@ -12,7 +12,7 @@ R1-3 is a release based on the master branch.
 * None
 
 #### Bug fixes
-* Pull request [#15](https://github.com/epics-motor/motorMotorSim/pull/15): [Stephen Dann](https://github.com/stephen-jd-dann) fixed an uninitialized variable bug that caused the first axis to get stuck in the moving state.
+* Pull request [#14](https://github.com/epics-motor/motorMotorSim/pull/14): [Stephen Dann](https://github.com/stephen-jd-dann) fixed an uninitialized variable bug that caused the first axis to get stuck in the moving state.
 * Pull request [#10](https://github.com/epics-motor/motorMotorSim/pull/10): [Jakub Wlodek](https://github.com/jwlodek) fixed a typo in the motorSimConfigAxis help output.
 * Pull request [#13](https://github.com/epics-motor/motorMotorSim/pull/13): [J. Lewis Muir](https://github.com/jlmuir) fixed typos in README.md.
 
